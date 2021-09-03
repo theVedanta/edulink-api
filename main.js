@@ -13,7 +13,7 @@ async function connectDB() {
   await mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
+    // useCreateIndex: true,
   });
   app.listen(PORT, () => console.log(`Listening on ${PORT}...`));
 }
@@ -27,12 +27,13 @@ app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 // ROUTES
-app.use("/tutor", require("./routes/"))
+app.use("/tutor", require("./routes/tutor/tutor"));
+app.use("/student", require("./routes/student/student"));
 
 // errors
 app.get("/err", (req, res) => {
   res.json({ Error: "Some error has occurred" });
 });
 app.get("*", (req, res) => {
-  res.render("404");
+  res.send("404");
 });
