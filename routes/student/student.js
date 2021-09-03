@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Student = require("../../models/student");
 const jwt = require("jsonwebtoken");
 
-// MIDDLEWARE
+// ROUTES
 router.use("/auth", require("./auth"));
 router.get("/logout", (req, res) => {
   res.clearCookie("student-auth").redirect("/student/auth");

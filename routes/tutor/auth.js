@@ -1,19 +1,15 @@
 const router = require("express").Router();
-const Tutor = require("../../models/tutor");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const Tutor = require("../../models/tutor");
 
-// MIDDLEWARE
-router.get("/", (req, res) => {
-  console.log("AUTH HERE");
+// ROUTES
+router.post("/register", (req, res) => {
+  console.log("register post");
 });
 
 router.post("/login", (req, res) => {
-  console.log("Login auth");
-});
-
-router.post("/register", (req, res) => {
-  console.log("Register Teacher");
+  console.log("login post");
 });
 
 module.exports = router;

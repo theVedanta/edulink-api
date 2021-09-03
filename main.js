@@ -27,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 // ROUTES
+app.use("/auth", require("./routes/auth"));
 app.use("/tutor", require("./routes/tutor/tutor"));
 app.use("/student", require("./routes/student/student"));
 
