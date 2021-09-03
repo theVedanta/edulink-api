@@ -1,2 +1,2 @@
 # edulink-api
-HACK JNU submission API
+HACK JNU submission
